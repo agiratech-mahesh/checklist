@@ -6,5 +6,19 @@ steps {
      checkout scm
      }
      }
+     stage ('cloning repository') {
+            steps {
+             sh ("""
+                  git config --global  user.name agiratech-mahesh
+                  git config --global  user.email mahesh.m@agiratech.com
+                 rm -rf checklist && git clone https://github.com/agiratech-mahesh/checklist.git
+                  """)
+                   }
+                   }
+            stage ('deploy') {
+            steps {
+            sh " cp -r /var/lib/jenkins/workspace/amazon/index.html /var/www/amazon.com/public_html"
+            }
+            }
      }
      }
