@@ -17,7 +17,7 @@ steps {
                    }
             stage ('deploy') {
             steps {
-            sh " cp -r /var/lib/jenkins/workspace/amazon/index.html /var/www/amazon.com/public_html"
+            sh " cp -r /var/lib/jenkins/workspace/checklist/ /var/www/checklist"
             }
             }
      }
